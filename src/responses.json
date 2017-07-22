@@ -1,0 +1,10 @@
+{
+  "stop": "Goodbye!",
+  "help": "Get news from up to 70 sources. Just say, get headlines from, and your desired source", 
+  "error": "Sorry, something went wrong",
+  "genericReprompt": "Sorry, I didn't get that, can you repeat that?", 
+  "getHeadlinesEnd": "Ask for more news, or ask for headline 1, 2 or 3 to get more detail", 
+  "newsSourceSlotElicit": "Where would you like to get news from?", 
+  "sourceDoesntExist": "Sorry, I didn't recognise the source, can you repeat it?", 
+  "problemReadingArticle": "Sorry, there was a problem reading the article. I've sent a card to your device with the link to the article"
+}
