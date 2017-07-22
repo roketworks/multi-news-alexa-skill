@@ -13,12 +13,14 @@ module.exports = {
     return value;
   },
   buildCardImageObject: function(article) {
-    if (_.startsWith(article.urlToImage, 'https://')){
-      return {
-        smallImgUrl: article.urlToImage,
-        largeImageUrl: article.urlToImage
-      };
-    } 
+    // TODO: resize img, seems to be causing issues with request size when sending cards to alexa
+    // always returning null untill fixed
+    // if (_.startsWith(article.urlToImage, 'https://')){
+    //   return {
+    //     smallImgUrl: article.urlToImage,
+    //     largeImageUrl: article.urlToImage
+    //   };
+    // } 
     return null;
   } 
 }
