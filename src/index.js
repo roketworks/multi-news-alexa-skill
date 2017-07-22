@@ -39,17 +39,20 @@ var handlers = {
     } else {
       var self = this
       var source = alexaHelper.slotValue(intentObj.slots.NewsSource, true);
+      console.log('source: ' + source);
 
       news.getHeadlines(source, function(res, body, err) {
         if (res.status === 'error') {
-          if (res.code === 'sourceDoesntExist') {
-            // TODO: do a try again
-            var speechOutput = responseHelper.getElicitSource();
-            var repromptSpeech = responseHelper.getGenericReprompt();
-            self.emit(':elicitSlot', sourceSlotName, speechOutput, repromptSpeech);
-          } else {
-            self.emit(':tell', responseHelper.getErrorPrompt());
-          }
+          self.emit(':tell', responseHelper.getErrorPrompt());
+        }
+
+        console.log(res);
+
+        if (res.code === 'sourceDoesntExist') {
+          // TODO: do a try again
+          var speechOutput = responseHelper.getElicitSource();
+          var repromptSpeech = responseHelper.getGenericReprompt();
+          self.emit(':elicitSlot', sourceSlotName, speechOutput, repromptSpeech);
         }
 
         var articles = body.articles;
@@ -122,7 +125,8 @@ var handlers = {
           console.log('txt: ' + textResponse);
           summarizer.summarize(detailArticle.title, textResponse, function(summarizedArticle) {
             var speechResponse = responseHelper.getArticleSpeech(detailArticle.title, detailArticle.author, summarizedArticle); 
-            self.emit(':tellWithCard', speechResponse, detailArticle.title, textResponse, alexaHelper.buildCardImageObject(detailArticle));
+            console.log ('speech: ' + speechResponse);
+            self.emit(':tellWithCard', speechResponse, detailArticle.title, summarizedArticle, alexaHelper.buildCardImageObject(detailArticle));
           });
         });
       });
@@ -132,10 +136,10 @@ var handlers = {
 
 var defaultHandlers = {
   'LaunchRequest': function () {
-    this.emit(':ask', 'You can ask for headlines from your desired source');
+    this.emit(':ask', responseHelper.getHelpSpeech());
   },
   'Unhandled': function() {
-    this.emit(':ask', 'Sorry, I didn\'t get that', 'Try asking for headlines');
+    this.emit(':ask', 'Sorry, I didn\'t get that', 'Try asking for headlines from a source');
   },
   'AMAZON.HelpIntent': function() {
     this.emit(':ask', responseHelper.getHelpSpeech());
