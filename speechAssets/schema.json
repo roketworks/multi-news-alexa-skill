@@ -1,0 +1,506 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "GetArticleIntent",
+      "samples": [
+        "get {Article}",
+        "{Article} please",
+        "article {Article}",
+        "headline {Article}",
+        "detail for {Article}",
+        "more about {Article}",
+        "article {Article} detail",
+        "headline {Article} detail",
+        "get article {Article}",
+        "get headline {Article}"
+      ],
+      "slots": [
+        {
+          "name": "Article",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "get {Article}",
+            "get article {Article}",
+            "{Article} please",
+            "headline {Article}",
+            "{Article} details",
+            "details about {Article}",
+            "more about {Article}",
+            "{Article} detail",
+            "article {Article} detail",
+            "headline {Article} detail"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GetMoreNewsIntent",
+      "samples": [
+        "more",
+        "more please",
+        "more new",
+        "more headlines",
+        "contiune news"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetNewsIntent",
+      "samples": [
+        "get {NewsSource} news",
+        "get {NewsSource} headlines",
+        "headlines for {NewsSource}",
+        "headlines from {NewsSource}",
+        "news from {NewsSource}",
+        "get headlines",
+        "get news",
+        "headlines ",
+        "news"
+      ],
+      "slots": [
+        {
+          "name": "NewsSource",
+          "type": "NewsSource",
+          "samples": [
+            "{NewsSource} news",
+            "{NewsSource} headlines",
+            "headlines from {NewsSource}",
+            "news from {NewsSource}"
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "NewsSource",
+      "values": [
+        {
+          "id": "bbc-news",
+          "name": {
+            "value": "BBC news",
+            "synonyms": [
+              "b. b. c. news",
+              "b. b. c.",
+              "BBC News",
+              "BBC",
+              "bbc",
+              "bbc news"
+            ]
+          }
+        },
+        {
+          "id": "polygon",
+          "name": {
+            "value": "polygon",
+            "synonyms": [
+              "poly",
+              "gon"
+            ]
+          }
+        },
+        {
+          "id": "the-verge",
+          "name": {
+            "value": "the verge",
+            "synonyms": [
+              "The verge",
+              "verge"
+            ]
+          }
+        },
+        {
+          "id": "abc-news-au",
+          "name": {
+            "value": "ABC News",
+            "synonyms": [
+              "ABC",
+              "a. b. c.",
+              "a. b. c. news",
+              "ABC News AU",
+              "a. b. c. news a. u.",
+              "ABC AU",
+              "a. b. c. a. u."
+            ]
+          }
+        },
+        {
+          "id": "al-jazeera-english",
+          "name": {
+            "value": "Al Jazerra",
+            "synonyms": [
+              "Jazeera",
+              "Al Jazeera English"
+            ]
+          }
+        },
+        {
+          "id": "ars-technica",
+          "name": {
+            "value": "Ars Technica",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "bbc-sport",
+          "name": {
+            "value": "BBC Sport",
+            "synonyms": [
+              "b. b. c. sport"
+            ]
+          }
+        },
+        {
+          "id": "bloomberg",
+          "name": {
+            "value": "Bloomberg",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "business-insider",
+          "name": {
+            "value": "Business Insider",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "business-insider-uk",
+          "name": {
+            "value": "Business Insider UK",
+            "synonyms": [
+              "Business Insider u. k."
+            ]
+          }
+        },
+        {
+          "id": "buzzfeed",
+          "name": {
+            "value": "Buzzfeed",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "cnbc",
+          "name": {
+            "value": "CNBC",
+            "synonyms": [
+              "c. n. b. c."
+            ]
+          }
+        },
+        {
+          "id": "cnn",
+          "name": {
+            "value": "CNN",
+            "synonyms": [
+              "c. n. n."
+            ]
+          }
+        },
+        {
+          "id": "engadget",
+          "name": {
+            "value": "Endgadget",
+            "synonyms": [
+              "End gadget"
+            ]
+          }
+        },
+        {
+          "id": "entertainment-weekly",
+          "name": {
+            "value": "Entertainment Weekly",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "espn",
+          "name": {
+            "value": "ESPN",
+            "synonyms": [
+              "e. s. p. n."
+            ]
+          }
+        },
+        {
+          "id": "espn-cric-info",
+          "name": {
+            "value": "ESPN Cric Info",
+            "synonyms": [
+              "Cricket",
+              "Cricket Information",
+              "Cricket Info",
+              "e. s. p. n. cricket",
+              "e. s. p. n. cricket info",
+              "e. s. p. n. cricket information"
+            ]
+          }
+        },
+        {
+          "id": "financial-times",
+          "name": {
+            "value": "Financial Times",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "football-italia",
+          "name": {
+            "value": "Football Italia",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "fortune",
+          "name": {
+            "value": "Fortune",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "four-four-two",
+          "name": {
+            "value": "Four Four Two",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "google-news",
+          "name": {
+            "value": "Google",
+            "synonyms": [
+              "Google News"
+            ]
+          }
+        },
+        {
+          "id": "hacker-news",
+          "name": {
+            "value": "Hacker News",
+            "synonyms": [
+              "HN",
+              "h. n."
+            ]
+          }
+        },
+        {
+          "id": "ign",
+          "name": {
+            "value": "IGN",
+            "synonyms": [
+              "i. g. n."
+            ]
+          }
+        },
+        {
+          "id": "independent",
+          "name": {
+            "value": "Independent",
+            "synonyms": [
+              "the independent"
+            ]
+          }
+        },
+        {
+          "id": "mashable",
+          "name": {
+            "value": "Mashable",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "metro",
+          "name": {
+            "value": "Metro",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "mirror",
+          "name": {
+            "value": "Mirror",
+            "synonyms": [
+              "the mirror"
+            ]
+          }
+        },
+        {
+          "id": "mtv-news",
+          "name": {
+            "value": "MTV News",
+            "synonyms": [
+              "MTV",
+              "m. t. v."
+            ]
+          }
+        },
+        {
+          "id": "mtv-news-uk",
+          "name": {
+            "value": "MTV News UK",
+            "synonyms": [
+              "MTV UK",
+              "m. t. v. u. k."
+            ]
+          }
+        },
+        {
+          "id": "national-geographic",
+          "name": {
+            "value": "National Geographic",
+            "synonyms": [
+              "nationalgeographic"
+            ]
+          }
+        },
+        {
+          "id": "new-scientist",
+          "name": {
+            "value": "New Scientist",
+            "synonyms": [
+              "newscientist"
+            ]
+          }
+        },
+        {
+          "id": "newsweek",
+          "name": {
+            "value": "Newsweek",
+            "synonyms": [
+              "News Week"
+            ]
+          }
+        },
+        {
+          "id": "new-york-magazine",
+          "name": {
+            "value": "New York Magazine",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "nfl-news",
+          "name": {
+            "value": "NFL News",
+            "synonyms": [
+              "NFL",
+              "n. f. l. news"
+            ]
+          }
+        },
+        {
+          "id": "recode",
+          "name": {
+            "value": "Recode",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "reddit-r-all",
+          "name": {
+            "value": "Reddit",
+            "synonyms": [
+              "Reddit",
+              "r all",
+              "reddit r all"
+            ]
+          }
+        },
+        {
+          "id": "reuters",
+          "name": {
+            "value": "Reuters",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "talksport",
+          "name": {
+            "value": "TalkSport",
+            "synonyms": [
+              "Talk Sport"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GetArticleIntent.IntentSlot-Article",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Which article would you like more detail on?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetNewsIntent.IntentSlot-NewsSource",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What source would like the headlines from?"
+        },
+        {
+          "type": "PlainText",
+          "value": "What source would you like news from?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "GetArticleIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Article",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetArticleIntent.IntentSlot-Article"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GetNewsIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "NewsSource",
+            "type": "NewsSource",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetNewsIntent.IntentSlot-NewsSource"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
