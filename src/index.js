@@ -16,7 +16,7 @@ var numArticlesToRead = 3;
 
 exports.handler = function(event, context, callback) {
   var alexa = Alexa.handler(event, context);
-  //alexa.appId = appId;
+  alexa.appId = appId;
   alexa.registerHandlers(defaultHandlers, handlers);
   alexa.execute();
 };
@@ -42,17 +42,14 @@ var handlers = {
       console.log('source: ' + source);
 
       news.getHeadlines(source, function(res, body, err) {
-        if (res.status === 'error') {
-          self.emit(':tell', responseHelper.getErrorPrompt());
-        }
-
-        console.log(res);
-
-        if (res.code === 'sourceDoesntExist') {
-          // TODO: do a try again
-          var speechOutput = responseHelper.getElicitSource();
-          var repromptSpeech = responseHelper.getGenericReprompt();
-          self.emit(':elicitSlot', sourceSlotName, speechOutput, repromptSpeech);
+        if (body.status === 'error') {
+          if (body.code === 'sourceDoesntExist') {
+            var speechOutput = responseHelper.getUnknownSourcePrompt();
+            var repromptSpeech = responseHelper.getGenericReprompt();
+            self.emit(':elicitSlot', sourceSlotName, speechOutput, repromptSpeech);
+          } else {
+            self.emit(':tell', responseHelper.getErrorPrompt());
+          }
         }
 
         var articles = body.articles;
@@ -114,7 +111,7 @@ var handlers = {
 
       var self = this; 
       var readableArticle = news.getReadablePage(detailArticle, function(res, body, err){
-        if (body.content.trim().length === 0){
+        if (!body.content || body.content.trim().length === 0){
           var problemReadingResponse = responseHelper.getProblemReadingArticleSpeech();
           var title = detailArticle.title;
           var description = detailArticle.description + '\n\n' + article.url;
@@ -122,8 +119,9 @@ var handlers = {
         } 
 
         articleParser.getArticleText(body.content, function(textResponse){
-          console.log('txt: ' + textResponse);
+          console.log('pre summary: ' + textResponse);
           summarizer.summarize(detailArticle.title, textResponse, function(summarizedArticle) {
+            console.log('txt: ' + summarizedArticle);
             var speechResponse = responseHelper.getArticleSpeech(detailArticle.title, detailArticle.author, summarizedArticle); 
             console.log ('speech: ' + speechResponse);
             self.emit(':tellWithCard', speechResponse, detailArticle.title, summarizedArticle, alexaHelper.buildCardImageObject(detailArticle));
