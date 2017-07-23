@@ -434,6 +434,140 @@
               "Talk Sport"
             ]
           }
+        },
+        {
+          "id": "techcrunch",
+          "name": {
+            "value": "TechCrunch",
+            "synonyms": [
+              "Tech Crunch"
+            ]
+          }
+        },
+        {
+          "id": "techradar",
+          "name": {
+            "value": "TechRadar",
+            "synonyms": [
+              "Tech Radar"
+            ]
+          }
+        },
+        {
+          "id": "the-huffington-post",
+          "name": {
+            "value": "The Huffington post",
+            "synonyms": [
+              "Huffington",
+              "Huffington post"
+            ]
+          }
+        },
+        {
+          "id": "the-guardian-uk",
+          "name": {
+            "value": "The Guardian UK",
+            "synonyms": [
+              "guardian UK",
+              "guardian u. k."
+            ]
+          }
+        },
+        {
+          "id": "the-guardian-au",
+          "name": {
+            "value": "The Guardian AU",
+            "synonyms": [
+              "The Guardian Australia",
+              "Guardian Australia",
+              "The Guardian a. u."
+            ]
+          }
+        },
+        {
+          "id": "the-lad-bible",
+          "name": {
+            "value": "The LAD bible",
+            "synonyms": [
+              "LAD Bible",
+              "lad bible",
+              "the lad bible"
+            ]
+          }
+        },
+        {
+          "id": "the-new-york-times",
+          "name": {
+            "value": "The New York Times",
+            "synonyms": [
+              "New York times"
+            ]
+          }
+        },
+        {
+          "id": "the-next-web",
+          "name": {
+            "value": "The Next Web",
+            "synonyms": [
+              "Next web"
+            ]
+          }
+        },
+        {
+          "id": "the-sport-bible",
+          "name": {
+            "value": "The Sport Bible",
+            "synonyms": [
+              "Sport Bible"
+            ]
+          }
+        },
+        {
+          "id": "the-telegraph",
+          "name": {
+            "value": "The Telegraph",
+            "synonyms": [
+              "Telegraph"
+            ]
+          }
+        },
+        {
+          "id": "the-wall-street-journal",
+          "name": {
+            "value": "The Wall Stree Journal",
+            "synonyms": [
+              "WSJ",
+              "w. s. j.",
+              "Wall Street Journal"
+            ]
+          }
+        },
+        {
+          "id": "the-washington-post",
+          "name": {
+            "value": "The Washington Post",
+            "synonyms": [
+              "Washington Post"
+            ]
+          }
+        },
+        {
+          "id": "time",
+          "name": {
+            "value": "Time",
+            "synonyms": [
+              "Time magazine"
+            ]
+          }
+        },
+        {
+          "id": "usa-today",
+          "name": {
+            "value": "USA Today",
+            "synonyms": [
+              "u. s. a. today"
+            ]
+          }
         }
       ]
     }
